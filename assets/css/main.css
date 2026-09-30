@@ -1,0 +1,434 @@
+/**
+ * DecorZa Theme - Main Modular CSS Stylesheet
+ * 
+ * @package DecorZa
+ * @version 1.3.1
+ */
+
+/* ==========================================================================
+   Category & Archive Responsive Layout & Horizontal Overflow Fixes
+   ========================================================================== */
+
+/* Universal boundary constraint for all containers, cards, and sidebar widgets */
+.decorza-container,
+.decorza-reading-container,
+.decorza-section,
+.decorza-layout-with-sidebar,
+.decorza-content-area,
+.decorza-sidebar,
+.decorza-grid,
+.decorza-card,
+.decorza-card-horizontal,
+.decorza-category-card,
+.decorza-author-card,
+.decorza-card-body,
+.decorza-card-media,
+.decorza-card-footer,
+.decorza-widget,
+.decorza-footer-widget,
+.widget {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Enforce word wrapping on all titles, headings, and paragraph text */
+h1, h2, h3, h4, h5, h6,
+.decorza-card-title,
+.decorza-card-title a,
+.decorza-widget-title,
+.decorza-widget-post-title,
+.decorza-widget-post-title a,
+.decorza-archive-hero-title,
+.decorza-single-title,
+.decorza-section-title,
+.decorza-footer-widget-title,
+.decorza-card-excerpt,
+.decorza-card-excerpt p,
+.decorza-archive-hero-desc,
+.decorza-archive-hero-desc p,
+.decorza-breadcrumbs,
+.widget_recent_entries li,
+.widget_recent_entries li a,
+.decorza-widget li,
+.decorza-widget li a,
+p,
+span,
+a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Ensure grid items can shrink below intrinsic child width */
+.decorza-content-area,
+.decorza-sidebar,
+.decorza-card,
+.decorza-card-body,
+.decorza-widget,
+.decorza-widget-post-info {
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Mobile Responsive Breakpoint (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll & viewport overflow */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative;
+  }
+
+  #main-content,
+  .site-main,
+  .decorza-section,
+  .decorza-archive-hero,
+  .decorza-container,
+  .decorza-reading-container {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Single-column stacking for category layout & sidebar */
+  .decorza-layout-with-sidebar,
+  .decorza-layout-with-sidebar.sidebar-left {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 2rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-content-area,
+  .decorza-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-grid,
+  .decorza-grid-4,
+  .decorza-grid-3,
+  .decorza-grid-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Post Cards */
+  .decorza-card,
+  .decorza-card-horizontal {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .decorza-card-body,
+  .decorza-card-horizontal .decorza-card-body {
+    padding: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-title,
+  .decorza-card-horizontal .decorza-card-title {
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.65rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-title a,
+  .decorza-card-horizontal .decorza-card-title a {
+    display: inline !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-excerpt {
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-excerpt * {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-footer {
+    padding-top: 0.85rem !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-card-author {
+    min-width: 0 !important;
+    max-width: calc(100% - 80px) !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-card-read-more {
+    flex-shrink: 0 !important;
+  }
+
+  /* Sidebar Widgets & Recent Posts */
+  .decorza-sidebar {
+    gap: 1.5rem !important;
+  }
+
+  .decorza-widget {
+    padding: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .decorza-widget-title {
+    font-size: 1.15rem !important;
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .decorza-widget ul,
+  .decorza-widget ol,
+  .widget_recent_entries ul,
+  .widget_recent_comments ul,
+  .widget_archive ul,
+  .widget_categories ul,
+  .widget_meta ul,
+  .widget_nav_menu ul {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .decorza-widget ul li,
+  .decorza-widget ol li,
+  .widget_recent_entries ul li,
+  .widget_recent_comments ul li,
+  .widget_archive ul li,
+  .widget_categories ul li,
+  .widget_meta ul li,
+  .widget_nav_menu ul li {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    padding: 0.65rem 0 !important;
+  }
+
+  .decorza-widget ul li a,
+  .decorza-widget ol li a,
+  .widget_recent_entries ul li a,
+  .widget_recent_comments ul li a,
+  .widget_archive ul li a,
+  .widget_categories ul li a,
+  .widget_meta ul li a,
+  .widget_nav_menu ul li a {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    display: block !important;
+  }
+
+  .decorza-widget-post-item {
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-widget-post-thumb {
+    width: 65px !important;
+    height: 65px !important;
+    min-width: 65px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .decorza-widget-post-info {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-widget-post-title {
+    font-size: 0.9rem !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+
+  .decorza-widget-post-title a {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+
+  /* Form Elements in Widgets on Mobile */
+  .decorza-widget form,
+  .decorza-widget .search-form,
+  .decorza-widget .wp-block-search,
+  .widget_search .search-form,
+  .wp-block-search {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .wp-block-search__inside-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-widget input[type="search"],
+  .decorza-widget input[type="text"],
+  .decorza-widget input[type="email"],
+  .decorza-widget .search-field,
+  .wp-block-search__input {
+    flex: 1 1 140px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-widget input[type="submit"],
+  .decorza-widget button[type="submit"],
+  .decorza-widget .search-submit,
+  .wp-block-search__button {
+    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Breadcrumbs on Mobile */
+  .decorza-breadcrumbs {
+    margin-bottom: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* Hero Banner on Mobile */
+  .decorza-archive-hero {
+    padding: 2.5rem 0 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-archive-hero-title {
+    font-size: clamp(1.65rem, 5.5vw, 2.25rem) !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+
+  .decorza-archive-hero-desc {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* Pagination on Mobile */
+  .decorza-pagination {
+    margin-top: 2rem !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-pagination .page-numbers {
+    min-width: 36px !important;
+    height: 36px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Small screen breakpoint (<= 480px) */
+@media (max-width: 480px) {
+  .decorza-container,
+  .decorza-reading-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-widget {
+    padding: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-card-body,
+  .decorza-card-horizontal .decorza-card-body {
+    padding: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .decorza-category-card {
+    height: 200px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
